@@ -1,6 +1,6 @@
 # CMake entry point
 cmake_minimum_required (VERSION 3.1)
-project (SH2D)
+project (PocketDemon)
 
 if( CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR )
 	message( FATAL_ERROR "Please select another Build Directory ! (and give it a clever name, like 'build')" )
@@ -86,12 +86,11 @@ add_library(common # ar rcs libcommon.a
 # Demo
 add_executable(demo # g++ demo/demo.cpp -o demo
 	demo/demo.cpp
-	demo/MyScene.cpp
-	demo/MyScene.h
+	
 )
 
 #PocketDemon
-add_executable(titres # g++ PocketDemon/demo.cpp -o PocketDemon
+add_executable(PocketDemon # g++ PocketDemon/MyGame.cpp -o PocketDemon
 	PocketDemon/MyGame.cpp
 	PocketDemon/MyGame.h
 	PocketDemon/BattleScene.cpp
@@ -105,7 +104,7 @@ target_link_libraries(demo # g++ -lcommon
 	common
 	${ALL_GRAPHICS_LIBS}
 )
-target_link_libraries(PocketDemon #g++ -lcommon
+target_link_libraries(PocketDemon # g++ -lcommon
 	common
 	${ALL_GRAPHICS_LIBS}
 )
