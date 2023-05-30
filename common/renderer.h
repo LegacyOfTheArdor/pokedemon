@@ -7,6 +7,8 @@
 #include <common/scene.h>
 #include <common/camera.h>
 #include <common/sprite.h>
+#include <common/resourcemanager.h>
+
 
 class Renderer
 {
@@ -15,7 +17,8 @@ public:
 	virtual ~Renderer();
 
 	void renderScene(Scene* scene);
-	void renderSprite(Sprite* sprite);
+	void renderEntity(Entity* entity, glm::mat4 PaMa);
+	void renderSprite(Sprite* sprite, glm::mat4 MVP);
 	GLFWwindow* window() { return _window; };
 
 	float updateDeltaTime();
@@ -33,6 +36,11 @@ private:
 	GLuint _programID;
 
 	Camera* _camera; // reference to scene->camera
+
+	ResourceManager _resMan;
+
+	glm::mat4 _viewMatrix;
+	glm::mat4 _projectionMatrix;
 };
 
 #endif /* RENDERER_H */

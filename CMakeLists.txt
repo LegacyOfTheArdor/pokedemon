@@ -1,6 +1,6 @@
 # CMake entry point
 cmake_minimum_required (VERSION 3.1)
-project (MyFramework)
+project (SH2D)
 
 if( CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR )
 	message( FATAL_ERROR "Please select another Build Directory ! (and give it a clever name, like 'build')" )
@@ -63,6 +63,8 @@ set(ALL_GRAPHICS_LIBS
 
 # Common (libcommon.a)
 add_library(common # ar rcs libcommon.a
+	common/config.h
+	common/sh2dconfig.h
 	common/camera.h
 	common/camera.cpp
 	common/renderer.h
@@ -71,20 +73,46 @@ add_library(common # ar rcs libcommon.a
 	common/scene.cpp
 	common/sprite.h
 	common/sprite.cpp
+	common/resourcemanager.cpp
+	common/resourcemanager.h
+	common/inputmanager.cpp
+	common/inputmanager.h
+	common/entity.cpp
+	common/entity.h
+	common/game.cpp
+	common/game.h
 )
 
 # Demo
 add_executable(demo # g++ demo/demo.cpp -o demo
 	demo/demo.cpp
+	demo/MyScene.cpp
+	demo/MyScene.h
+)
+
+#PocketDemon
+add_executable(titres # g++ PocketDemon/demo.cpp -o PocketDemon
+	PocketDemon/MyGame.cpp
+	PocketDemon/MyGame.h
+	PocketDemon/BattleScene.cpp
+	PocketDemon/BattleScene.h
+	PocketDemon/BattleMenu.cpp
+	PocketDemon/BattleMenu.h
+	PocketDemon/LimboScene.cpp
+	PocketDemon/LimboScene.h
 )
 target_link_libraries(demo # g++ -lcommon
+	common
+	${ALL_GRAPHICS_LIBS}
+)
+target_link_libraries(PocketDemon #g++ -lcommon
 	common
 	${ALL_GRAPHICS_LIBS}
 )
 # Copy assets and shaders to the build directory
 # (In Visual Studio, copy these directories to either 'Release' or 'Build')
 file(
-	COPY demo/assets
+	COPY PocketDemon/assets
 	DESTINATION ${CMAKE_BINARY_DIR}
 )
 file(

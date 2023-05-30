@@ -11,7 +11,7 @@ public:
 	Sprite(const std::string& imagepath);
 	virtual ~Sprite();
 
-	GLuint texture() { return _texture; };
+	GLuint getTexture() { return _texture; };
 	GLuint vertexbuffer() { return _vertexbuffer; };
 	GLuint uvbuffer() { return _uvbuffer; };
 
@@ -22,8 +22,13 @@ public:
 	float rotation;
 	glm::vec3 scale;
 
-private:
+	std::string TextureName() { return _textureName; };
+
 	GLuint loadTGA(const std::string& imagepath);
+	void createBuffer();
+	void SetUp(GLuint vb, GLuint uv, GLuint texture, unsigned int width, unsigned int height);
+
+private:
 
 	GLuint _texture;
 	GLuint _vertexbuffer;
@@ -31,6 +36,10 @@ private:
 
 	unsigned int _width;
 	unsigned int _height;
+
+	bool setup;
+
+	std::string _textureName;
 };
 
 #endif /* SPRITE_H */
