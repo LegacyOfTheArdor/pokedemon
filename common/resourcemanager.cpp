@@ -1,21 +1,29 @@
-#ifndef RESOURCEMANAGER_H
-#define RESOURCEMANAGER_H
+#include <common/resourcemanager.h>
+#include <common/config.h>
 
-#include <map>
-#include <string>
-#include <common/sprite.h>
-#include <GL/glew.h>
+#include <iostream>
 
-class ResourceManager
+ResourceManager::ResourceManager()
 {
-public:
-	ResourceManager();
-	virtual ~ResourceManager();
+	std::cout << "Creating ResourceManager" << std::endl;
+}
 
-	Sprite* GetTexture(const std::string& fileName);
+ResourceManager::~ResourceManager()
+{
+	std::cout << "Destroying ResourceManager" << std::endl;
+}
 
-private:
-	std::map<std::string, Sprite*> _textures;
-};
-
-#endif // !RESOURCEMANAGER_H
+Sprite* ResourceManager::GetTexture(const std::string& fileName)
+{
+	if (_textures[fileName] != NULL)
+	{
+		return _textures[fileName];
+	}
+	else
+	{
+		Sprite* s = new Sprite(fileName);
+		s->loadTGA(fileName);
+		_textures[fileName] = s;
+		return s;
+	}
+}
