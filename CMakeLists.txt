@@ -100,6 +100,14 @@ add_executable(PocketDemon # g++ PocketDemon/MyGame.cpp -o PocketDemon
 	PocketDemon/BattleMenu.h
 	PocketDemon/LimboScene.cpp
 	PocketDemon/LimboScene.h
+	PocketDemon/FightButton.cpp
+	PocketDemon/FightButton.h
+	PocketDemon/InventoryButton.cpp
+	PocketDemon/InventoryButton.h
+	PocketDemon/DemonPButton.cpp
+	PocketDemon/DemonPButton.h
+	PocketDemon/RunButton.cpp
+	PocketDemon/RunButton.h
 )
 target_link_libraries(demo # g++ -lcommon
 	common

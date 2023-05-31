@@ -3,6 +3,8 @@
 BattleScene::BattleScene()
 {
 	battleMenu = new BattleMenu();
+
+	this->AddChild(battleMenu);
 }
 
 BattleScene::~BattleScene()

@@ -1,20 +1,26 @@
 #include "BattleMenu.h" 
 BattleMenu::BattleMenu() 
 {
-	Sprite* FightB = new Sprite("assets/buttonTemplate.tga");
-	FightB->position = glm::vec3(400.0f, 300.0f, 0.0f);
+	FightB = new FightButton();
+	FightB->position = glm::vec3(0.0f, 0.0f, 0.0f);
+	FightB->scale = glm::vec3(0.5f, 0.5f, 1.0f);
+    this->AddChild(FightB);
     
-    Sprite* InventoryB = new Sprite("assets/buttonTemplate.tga");
-	InventoryB->position = glm::vec3(300.0f, 400.0f, 0.0f);
+    InventoryB = new InventoryButton();
+	InventoryB->position = glm::vec3(400.0f, 300.0f, 0.0f);
+	InventoryB->scale = glm::vec3(0.5f, 0.5f, 1.0f);
+    this->AddChild(InventoryB);
    
-    Sprite* DemonPartyB = new Sprite("assets/buttonTemplate.tga");
-	DemonPartyB->position = glm::vec3(400.0f, 0.0f, 0.0f);
+    DemonPB = new DemonPButton();
+	DemonPB->position = glm::vec3(400.0f, 0.0f, 0.0f);
+	DemonPB->scale = glm::vec3(0.5f, 0.5f, 1.0f);
+	this->AddChild(DemonPB);
     
-    Sprite* RunB = new Sprite("assets/buttonTemplate.tga");
+    RunB = new RunButton();
 	RunB->position = glm::vec3(0.0f, 300.0f, 0.0f);
+	RunB->scale = glm::vec3(0.5f, 0.5f, 1.0f);
+	this->AddChild(RunB);
 
-    Sprite* BackB = new Sprite("assets/buttonTemplate.tga");
-    BackB->position = glm::vec3(0.0f, 0.0f, 0.0f);
 } 
 BattleMenu::~BattleMenu() 
 { 
