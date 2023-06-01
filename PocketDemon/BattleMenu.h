@@ -2,10 +2,9 @@
 #define BATTLEMENU_H 
 
 #include <common/entity.h>
-#include <PocketDemon/FightButton.h>
-#include <PocketDemon/InventoryButton.h>
-#include <PocketDemon/DemonPButton.h>
-#include <PocketDemon/RunButton.h>
+#include <PocketDemon/Button.h>
+#include <PocketDemon/TextBox.h>
+
 
 class BattleMenu : public Entity
 { 
@@ -16,9 +15,10 @@ public:
 	virtual void update(float deltaTime);
 
 private:
-    FightButton* FightB;
-    InventoryButton* InventoryB;
-    DemonPButton* DemonPB;
-    RunButton* RunB;
+    Button* FightB;
+    Button* InventoryB;
+    Button* DemonPB;
+    Button* RunB;
+    TextBox* textBox;
 }; 
 #endif // BATTLEMENU_H  
