@@ -1,7 +1,7 @@
 #include "TextBox.h" 
 TextBox::TextBox() 
 {
-	this->AddSprite("assets/sideTemplate.tga");
+	this->AddSprite("assets/BattleText.tga");
    
 } 
 TextBox::~TextBox() 

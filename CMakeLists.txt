@@ -91,7 +91,7 @@ add_executable(demo # g++ demo/demo.cpp -o demo
 
 #PocketDemon
 add_executable(PocketDemon # g++ PocketDemon/MyGame.cpp -o PocketDemon
-	PocketDemon/demo.cpp
+	PocketDemon/main.cpp
 	PocketDemon/MyGame.cpp
 	PocketDemon/MyGame.h
 	PocketDemon/BattleScene.cpp
