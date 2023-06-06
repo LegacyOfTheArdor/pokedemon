@@ -11,4 +11,4 @@ public:
 
 	virtual void update(float deltaTime);
 }; 
-#endif // FIGHTBUTTON_H  
+#endif // BUTTON_H  

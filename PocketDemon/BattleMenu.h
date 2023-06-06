@@ -2,7 +2,7 @@
 #define BATTLEMENU_H 
 
 #include <common/entity.h>
-#include <PocketDemon/Button.h>
+#include <PocketDemon/GridGenerator.h>
 #include <PocketDemon/TextBox.h>
 
 
