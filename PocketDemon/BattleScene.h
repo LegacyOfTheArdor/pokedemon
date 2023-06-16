@@ -3,6 +3,7 @@
 
 #include <common/entity.h>
 #include <PocketDemon/BattleMenu.h>
+#include <PocketDemon/ButtonSelector.h>
 
 class BattleScene : public Entity
 {
@@ -15,6 +16,12 @@ public:
 
 private:
 	BattleMenu* battleMenu;
+	Button* fightButton;
+	Button* partyButton;
+	Button* inventoryButton;
+	Button* runButton;
+
+	ButtonSelector* cursor;
 
 };
 #endif // !BATTLESCENE_H

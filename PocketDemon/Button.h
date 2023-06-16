@@ -10,5 +10,9 @@ public:
     virtual ~Button(); 
 
 	virtual void update(float deltaTime);
+
+	bool selected;
+private:
+  
 }; 
 #endif // BUTTON_H  

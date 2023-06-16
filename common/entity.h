@@ -10,6 +10,9 @@
 #include <common/sprite.h>
 #include <common/config.h>
 #include <glm/glm.hpp>
+#include <common/inputmanager.h>
+#include <common/sh2dconfig.h>
+
 
 class Entity
 {
@@ -25,6 +28,8 @@ public:
 
 	void UpdateSprite();
 
+	InputManager* input() { return _input; };
+
 	std::vector<Entity*> Children() { return children; };
 	Sprite* ESprite() { return sprite; }
 
@@ -37,5 +42,8 @@ public:
 protected:
 	std::vector<Entity*> children;
 	Sprite* sprite;
+
+private:
+	InputManager* _input = InputManager::input();
 };
 #endif // !ENTITY_H

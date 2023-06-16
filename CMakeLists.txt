@@ -106,6 +106,8 @@ add_executable(PocketDemon # g++ PocketDemon/MyGame.cpp -o PocketDemon
 	PocketDemon/TextBox.h
 	PocketDemon/GridGenerator.cpp
 	PocketDemon/GridGenerator.h
+	PocketDemon/ButtonSelector.cpp
+	PocketDemon/ButtonSelector.h
 )
 target_link_libraries(demo # g++ -lcommon
 	common

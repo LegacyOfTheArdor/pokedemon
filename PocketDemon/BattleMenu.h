@@ -11,14 +11,14 @@ class BattleMenu : public Entity
 public: 
     BattleMenu(); 
     virtual ~BattleMenu(); 
-
+    
 	virtual void update(float deltaTime);
 
+	GridGenerator* GetBattleGrid() { return battleGrid; }
+
 private:
-    Button* FightB;
-    Button* InventoryB;
-    Button* DemonPB;
-    Button* RunB;
+  
     TextBox* textBox;
+    GridGenerator* battleGrid;
 }; 
 #endif // BATTLEMENU_H  

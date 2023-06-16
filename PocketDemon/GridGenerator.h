@@ -10,11 +10,13 @@ public:
     GridGenerator(); 
     virtual ~GridGenerator(); 
 
-    BattleGrid(int GridWidth, int GridHeight);
+    void BattleGrid();
 
 	virtual void update(float deltaTime);
 
+    std::vector<std::vector<Button*>> GetBattleButtons() { return battleButtons; }
 private:
-    
+
+    std::vector<std::vector<Button*>> battleButtons;
 }; 
 #endif // GRIDGENERATOR_H  
