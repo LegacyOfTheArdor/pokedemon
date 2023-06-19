@@ -11,6 +11,8 @@ ButtonSelector::ButtonSelector(std::vector<std::vector<Button*>> MenuButtons)
 
 	this->position.y = _menuButtons[indexY][indexX]->position.y;
 	this->position.x = _menuButtons[indexY][indexX]->position.x;
+
+	_menuButtons[indexY][indexX]->selected = true;
 } 
 ButtonSelector::~ButtonSelector() 
 { 
@@ -24,13 +26,6 @@ void ButtonSelector::update(float deltaTime)
 
 void ButtonSelector::Selecting()
 {
-	// int first = menuSize[0].position;
-	// int last = menuSize[menuSize.size].position;
-
-	/*
-	_menuButtons[!indexY][!indexX]->selected = false;
-	_menuButtons[indexY][indexX]->selected = true;
-	*/
 	
 
 	if(input()->getKeyDown(KEY_W) || input()->getKeyDown(Up))
