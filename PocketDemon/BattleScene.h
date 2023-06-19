@@ -12,6 +12,11 @@ public:
 
 	virtual ~BattleScene();
 
+	void FightOption();
+	void InventoryOption();
+	void PartyOption();
+	void RunOption();
+
 	virtual void update(float deltaTime);
 
 private:
