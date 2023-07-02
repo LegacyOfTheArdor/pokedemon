@@ -108,6 +108,24 @@ add_executable(PocketDemon # g++ PocketDemon/MyGame.cpp -o PocketDemon
 	PocketDemon/GridGenerator.h
 	PocketDemon/ButtonSelector.cpp
 	PocketDemon/ButtonSelector.h
+	PocketDemon/DemonTemplate.cpp
+	PocketDemon/DemonTemplate.h
+	PocketDemon/MoveTemplate.cpp
+	PocketDemon/MoveTemplate.h
+	PocketDemon/MoveList.cpp
+	PocketDemon/MoveList.h
+	PocketDemon/DemonList.cpp
+	PocketDemon/DemonList.h
+	PocketDemon/DemonParty.cpp
+	PocketDemon/DemonParty.h
+	PocketDemon/DevilBattler.cpp
+	PocketDemon/DevilBattler.h
+	PocketDemon/BattleCalculator.cpp
+	PocketDemon/BattleCalculator.h
+	PocketDemon/PlayerTemplate.cpp
+	PocketDemon/PlayerTemplate.h
+	PocketDemon/DevilTemplate.cpp
+	PocketDemon/DevilTemplate.h
 )
 target_link_libraries(demo # g++ -lcommon
 	common
